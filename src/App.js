@@ -1,5 +1,5 @@
-import React from 'react';
 import Expenses from './components/Expenses/Expenses';
+import NewExpense from './components/NewExpense/NewExpense';
 
 const App = () => {
 	const expenses = [
@@ -24,16 +24,21 @@ const App = () => {
 		},
 	];
 
-	// return React.createElement(
-	// 	'div',
-	// 	{},
-	// 	React.createElement('h2', {}, "Let's get started!"),
-	// 	React.createElement(Expenses, { items: expenses })
-	// );
+	/*
+	This alternative way of writing jsx code insted of syntetic sugar html elements in a React Function.
 
+	return React.createElement(
+		'div',
+		{},
+		React.createElement('h2', {}, "Let's get started!"),
+		React.createElement(Expenses, { items: expenses })
+	);
+*/
 	return (
 		<div>
-			<h2> ...Let's get started!</h2>
+			<h2>
+				<NewExpense />
+			</h2>
 			<Expenses expenses={expenses} />
 		</div>
 	);

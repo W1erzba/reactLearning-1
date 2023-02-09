@@ -24,6 +24,11 @@ const App = () => {
 		},
 	];
 
+	const addExpenseHandler = expense => {
+		console.log('In App.js');
+		console.log(expense);
+	};
+
 	/*
 	This alternative way of writing jsx code insted of syntetic sugar html elements in a React Function.
 
@@ -36,10 +41,8 @@ const App = () => {
 */
 	return (
 		<div>
-			<h2>
-				<NewExpense />
-			</h2>
-			<Expenses expenses={expenses} />
+			<NewExpense onAddExpense={addExpenseHandler} />
+			<Expenses items={expenses} />
 		</div>
 	);
 };

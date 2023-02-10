@@ -2,13 +2,18 @@ import React from 'react';
 
 import './ExpensesFilter.css';
 
-const ExpensesFilter = () => {
+const ExpensesFilter = (props) => {
+	const yearSelectHandler = (event) => {
+		props.onChangeFilter(event.target.value);
+	};
 	return (
-		//   FIXME:FIXME:FIXME:
 		<div className='expenses-filter'>
 			<div className='expenses-filter__control'>
-				<label>Filter by year</label>
-				<select>
+				<label className='expenses-filter label'>Filter by year</label>
+				<select
+					className='expenses-filter select'
+					value={props.selected}
+					onChange={yearSelectHandler}>
 					<option value='2022'>2022</option>
 					<option value='2021'>2021</option>
 					<option value='2020'>2020</option>

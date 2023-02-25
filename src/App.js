@@ -33,7 +33,6 @@ const App = () => {
 		console.log('In App.js');
 		console.log(expense);
 	};
-	// FIXME:
 	return (
 		<div>
 			<NewExpense onAddExpense={addExpenseHandler} />
@@ -42,5 +41,4 @@ const App = () => {
 	);
 };
 
-// Comming back from the brake
 export default App;

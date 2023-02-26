@@ -5,6 +5,7 @@ import ExpenseForm from './ExpenseForm';
 
 const NewExpense = (props) => {
 	const [isEditing, setIsEditing] = useState(false);
+
 	const saveExpenseDataHandler = (enteredExpenseData) => {
 		const expenseData = {
 			...enteredExpenseData,
@@ -15,10 +16,7 @@ const NewExpense = (props) => {
 	};
 
 	const editingButtonHandler = () => {
-		setIsEditing(true);
-	};
-	const stopEditingHandler = () => {
-		setIsEditing(false);
+		isEditing === true ? setIsEditing(false) : setIsEditing(true);
 	};
 
 	return (
@@ -27,7 +25,7 @@ const NewExpense = (props) => {
 			{isEditing && (
 				<ExpenseForm
 					onSaveExpenseData={saveExpenseDataHandler}
-					onCancel={stopEditingHandler}
+					onCancel={editingButtonHandler}
 				/>
 			)}
 		</div>
